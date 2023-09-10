@@ -1,1 +1,1 @@
-# MERN-INTERNSHIP
+# Mernstack internship
