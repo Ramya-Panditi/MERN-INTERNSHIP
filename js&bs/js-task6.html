@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-task6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+
+    <style>
+        h4{
+           color:white;
+           font-weight: bolder;
+          
+           font-family: 'Cedarville Cursive', cursive;
+
+        }
+        .container-fluid{
+            box-shadow: 0px 5px 10px gray;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid  w-25 p-2 mt-5 px-5" style="background-image: linear-gradient( #bc2a8e81,#833ab438, #405ce653,#0088cc2f);">
+        <h4 class="display-6 text-center">Instagram</h4>
+        <form action="https://www.instagram.com" class="form needs-validation" novalidate>
+            <div class="input-group my-3">
+                <span class="input-group-text" ><i class="fa-solid fa-user"></i></span>
+                <input type="text" class="form-control" id = "uname" placeholder="First Name"  required>
+                <div class="invalid-feedback">
+                  Please enter your username.
+                </div>
+              </div>
+            <div class="input-group my-3">
+                <span class="input-group-text" ><i class="fa-solid fa-lock"></i></span>
+                <input type="password" class="form-control" placeholder="password" id = "password"  required>
+                <div class="invalid-feedback">
+                  Please enter your password.
+                </div>
+              </div>
+              <button class="btn btn-primary m-auto w-100" >Log in </button>
+              <div class="form-check my-3 d-flex">
+                <input type="checkbox" class="form-check-input">
+                <label class="form-check-label mx-2" style = "font-size: 0.8rem;">Remember me</label>
+                <p class=" mx-1 " style = "font-size: 0.8rem;">Forgot password?</p>
+
+            </div>
+        </form>
+    </div>
+    <p class="text-center mt-2">Dont have an account! <a href="#" style="text-decoration: none;">Sign up here</a></p>
+    <script>
+        (() => {
+  'use strict'
+  const forms = document.querySelectorAll('.needs-validation')
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+    </script>
+</body>
+</html>

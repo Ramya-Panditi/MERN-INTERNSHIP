@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-task7</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #car{
+            position: relative;
+            top:0;
+            left:0;
+            z-index: 3;
+        }
+        @keyframes car-race {
+            to{
+                left: 70%;
+            }   
+        }
+        .road::before{
+            content: " ";
+            position: absolute;
+            width: 100%;
+            height: 10vh;
+            top:28%;
+            left: 0%;
+            background-color: grey;
+            box-shadow: 10px 10px 10px grey;
+        }
+        .stripes-1::before{
+            content: "";
+            background-color: white;
+            position: absolute;
+            top:31%;
+            height: 2vh;
+            width: 10vw;
+            transform: skew(25deg);
+        }
+        .stripes-2::before{
+            content: "";
+            background-color: white;
+            position: absolute;
+            top:31%;
+            left:40%;
+            height: 2vh;
+            width: 10vw;
+            transform: skew(25deg);
+        }
+        .stripes-3::before{
+            content: "";
+            background-color: white;
+            position: absolute;
+            top:31%;
+            left:80%;
+            height: 2vh;
+            width: 10vw;
+            transform: skew(25deg);
+        }
+       
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid" style="background-color: aliceblue;">
+        <img src="car-removebg-preview.png" alt="" style="width: 30%; height: 20%;" class = "my-5" id = "car">
+        <div class="road"></div>
+        <div class="stripes-1"></div>
+        <div class="stripes-2"></div>
+        <div class="stripes-3"></div>
+     
+    </div>
+    <div class="d-flex">
+
+        <button class="btn btn-outline-danger ms-auto me-5 my-5" onclick="racecar()">RACE</button>
+        <button class="btn btn-outline-danger me-auto my-5 " onclick="stopcar()">STOP</button>
+    </div>
+    <script>
+        function racecar(){
+            var car = document.getElementById('car');
+            car.style.animation = 'car-race 5s linear'; 
+
+        }
+        function stopcar(){
+            var car = document.getElementById('car');
+            car.style.animation = 'none'; 
+
+        }
+    </script>
+</body>
+</html>

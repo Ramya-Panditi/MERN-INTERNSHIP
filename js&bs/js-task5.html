@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-task5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        td{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid w-50">
+        <form action="www.google.com" onsubmit="return validate()" class="form">
+            <table class="table table-borderless">
+              <tr>
+                <td>Name:</td>
+                <td><input type="text" id="name" class="form-control "></td>
+                <td><p id="name-invalid"></p></td>
+              </tr>
+              <tr>
+                <td>Email:</td>
+                <td><input type="email" id="email" class="form-control "></td>
+                <td><p id="mail-invalid"></p></td>
+              </tr>
+              <tr>
+                <td>Website:</td>
+                <td><input type="url" id="url" class="form-control "></td>
+                <td><p id="url-invalid"></p></td>
+              </tr>
+              <tr>
+                <td>Message:</td>
+                <td><textarea name="Message" id="message" cols="30" rows="5" class="form-control"></textarea></td>
+                <td><p id="message-invalid"></p></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><Button class="btn btn-primary" type="submit">Submit</Button></td>
+              </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        function validate(){
+            var uname = document.getElementById('name').value;
+            var umail = document.getElementById('email').value;
+            var uweb = document.getElementById('url').value;
+            var umsg = document.getElementById('message').value;
+            if(uname === ""){
+                document.getElementById('name').style.borderColor = "red";
+                document.getElementById('name-invalid').innerHTML = `<p class = "text-danger">This field is required</p>`;
+                return false;
+            }
+            else if(umail === ""){
+                document.getElementById('email').style.borderColor = "red";
+                document.getElementById('mail-invalid').innerHTML = `<p class = "text-danger">A valid email is required</p>`;
+                return false;
+            }
+            else if(uweb === ""){
+                document.getElementById('url').style.borderColor = "red";
+                document.getElementById('url-invalid').innerHTML = `<p class = "text-danger">A valid url is required</p>`;
+                return false;
+            }
+            else if(umsg === ""){
+                document.getElementById('message').style.borderColor = "red";
+                document.getElementById('message-invalid').innerHTML = `<p class = "text-danger">A valid url is required</p>`;
+                return false;
+            }
+            return true;
+            
+        }
+    </script>
+    
+</body>
+</html>
